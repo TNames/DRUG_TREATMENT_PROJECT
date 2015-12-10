@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Predicting Drug Treatment Program Adherence by TNames</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Predicting Drug Treatment Program Adherence</h1>
-      <h2 class="project-tagline">Analysis by Taylor Names</h2>
-      <a href="https://github.com/TNames/DRUG_TREATMENT_PROJECT" class="btn">View on GitHub</a>
-      <a href="https://github.com/TNames/DRUG_TREATMENT_PROJECT/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/TNames/DRUG_TREATMENT_PROJECT/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<html>
 
-    <section class="main-content">
-      <h1>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Predicting Drug Treatment Program Adherence : Analysis by Taylor Names">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Predicting Drug Treatment Program Adherence</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/TNames/DRUG_TREATMENT_PROJECT">View on GitHub</a>
+
+          <h1 id="project_title">Predicting Drug Treatment Program Adherence</h1>
+          <h2 id="project_tagline">Analysis by Taylor Names</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/TNames/DRUG_TREATMENT_PROJECT/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/TNames/DRUG_TREATMENT_PROJECT/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
 <a id="project-overview" class="anchor" href="#project-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>PROJECT OVERVIEW</h1>
 
 <h3>
@@ -81,21 +93,21 @@
 
 <p>To gain some insight about the relationship between demographic, geographic, personal characteristics, treatment type and treatment program adherence we plotted the relationship between the two. Some of the most critical features are plotted below.</p>
 
-<p><img src="/DRUG_TREATMENT_PROJECT/tree/gh-pages/plots/age_tot.png" alt="age_tot"></p>
+<p><img src="plots/age_tot.png" alt="age_tot"></p>
 
 <p><img src="plots/EDUC_TOT.png" alt="EDUC_TOT"></p>
 
-<p><img src="/plots/REGION_TOT.png" alt="REGION_TOT"></p>
+<p><img src="plots/REGION_TOT.png" alt="REGION_TOT"></p>
 
-<p><img src="/plots/treatment_type_tot.png" alt="treatment_type_tot"></p>
+<p><img src="plots/treatment_type_tot.png" alt="treatment_type_tot"></p>
 
 <p>These relationships are also explored on a proportional basis. The plots below show the mean adherence rates for individual characteristics as compared to the mean adherence rate from all participants.</p>
 
-<p><img src="/plots/DIVISION_PROP.png" alt="DIVISION_PROP"></p>
+<p><img src="plots/DIVISION_PROP.png" alt="DIVISION_PROP"></p>
 
-<p><img src="/plots/TREAT_TYPE_PROP.png" alt="TREAT_TYPE_PROP"></p>
+<p><img src="plots/TREAT_TYPE_PROP.png" alt="TREAT_TYPE_PROP"></p>
 
-<p><img src="/plots/INCOME_PROP.png" alt="INCOME_PROP"></p>
+<p><img src="plots/INCOME_PROP.png" alt="INCOME_PROP"></p>
 
 <p>Most categories have an adherence rate similar to the population mean, however, certain features stood out. Below are some best and worst groups in terms of adherence rate:</p>
 
@@ -143,7 +155,7 @@
 
 <p>The interactions with the greatest difference in adherence rate from the mean are extremely rare occurrences. For example, one of the interaction terms with the lowest adherence rate (of 0%) belongs to Asian or Pacific islander who is a user of 'other stimulants'. Since there is only one sample that applies, it is unlikely that the true adherence rate for Asian stimulant users is 0.0. To form more realistic estimates for the adherence rate for interaction term, we performed Bayesian inference to shrink (or regularize) small sample size interactions toward the general mean. </p>
 
-<p><img src="/plots/INTERACTION_REG.png" alt="INTERACTION_REG"></p>
+<p><img src="plots/INTERACTION_REG.png" alt="INTERACTION_REG"></p>
 
 <p>The most relevant interaction terms were included as features in the 'Elastic Net' logistic regression.</p>
 
@@ -157,11 +169,11 @@
 
 <p>For each of the models, it is possible to explore 'feature importance' which identify the features that aided the model the most in making accurate predictions.</p>
 
-<p><img src="/plots/RF_FI.png" alt="RF_FI"></p>
+<p><img src="plots/RF_FI.png" alt="RF_FI"></p>
 
-<p><img src="/plots/LR_FI.png" alt="LR_FI"></p>
+<p><img src="plots/LR_FI.png" alt="LR_FI"></p>
 
-<p><img src="/plots/GBT_FI.png" alt="GBT_FI"></p>
+<p><img src="plots/GBT_FI.png" alt="GBT_FI"></p>
 
 <p>These calculated feature importances reinforce some of the insights that we gained from exploratory data analysis as geographic factors, treatment program type, and age contribute significantly to the predictive modelling. </p>
 
@@ -170,13 +182,13 @@
 
 <p>To evaluate the performance of the models, we check to see if they are properly calibrated. An example of calibration is: do the participants who are predicted to have a 90% probability of adherence adhere 90% of the time? For a perfectly calibrated model, this will be the case for all probability values.</p>
 
-<p>​                          <strong>UNCALIBRATED GRADIENT BOOSTED TREE MODEL</strong><img src="/plots/GBT_PRE_CAL.png" alt="GBT_PRE_CAL"></p>
+<p>​                          <strong>UNCALIBRATED GRADIENT BOOSTED TREE MODEL</strong><img src="plots/GBT_PRE_CAL.png" alt="GBT_PRE_CAL"></p>
 
 <p>As we can see from the above plot, the gradient boosted tree classifier underestimates the probability of adherence as the entire curve falls above the 'perfectly calibrated'  dotted line. </p>
 
 <p>Often times, improved calibration leads to improved predictive power. Each of the models were calibrated using 'isotonic' calibration in an attempt to improve their performance.</p>
 
-<p>​                             <strong>CALIBRATED GRADIENT BOOSTED TREE MODEL</strong><img src="/plots/GBT_POS_CAL.png" alt="GBT_POS_CAL"></p>
+<p>​                             <strong>CALIBRATED GRADIENT BOOSTED TREE MODEL</strong><img src="plots/GBT_POS_CAL.png" alt="GBT_POS_CAL"></p>
 
 <p>After performing 'isotonic' calibration, we see a significant improvement in the calibration as the curve is much closer to the 'perfectly calibrated' line.</p>
 
@@ -187,15 +199,15 @@
 
 <p>​                                         <strong>CALIBRATION OF ENSEMBLE MODEL</strong></p>
 
-<p><img src="/plots/ENS_CAL.png" alt="ENS_CAL"></p>
+<p><img src="plots/ENS_CAL.png" alt="ENS_CAL"></p>
 
 <p>Model performance was measured using <strong>'Log Loss'</strong> which is a measure of error when probabilities are being estimated. A log loss value of zero signifies that the model has no error.</p>
 
-<p><img src="/plots/LOG_LOSS_SCORE.png" alt="LOG_LOSS_SCORE"></p>
+<p><img src="plots/LOG_LOSS_SCORE.png" alt="LOG_LOSS_SCORE"></p>
 
 <p>Another performance metric utilised in analysis was <strong>simple accuracy</strong>. Probability estimates less than 50% were classified as 'didn't adhere' and above as 'adhered'.</p>
 
-<p><img src="/plots/ACCURACY_SCORE.png" alt="ACCURACY_SCORE"></p>
+<p><img src="plots/ACCURACY_SCORE.png" alt="ACCURACY_SCORE"></p>
 
 <p>The final ensemble model is <strong>well calibrated</strong> and with a final log-loss and accuracy scores that are very similar to those from the GBT model. The ensemble model is a <strong>significant improvement upon the baseline 63% model</strong> as it yields a higher accuracy and gives a personalized prediction for each individual.</p>
 
@@ -213,15 +225,18 @@
 <p><strong>MORE FEATURE ENGINEERING</strong></p>
 
 <p>Although there was a significant improvement upon the baseline models, the overall model still struggles with the outcome prediction for some individuals. There are many other factors that can contribute to treatment completion. Including data relating to family ties (contact with parents, having brothers and sisters) could help improve the model. As to protect the anonymity of the treatment providers, the dataset provided limited information about details from the treatment program. Data relating to treatment program affiliation (private, public, faith based) as well as program details such as amount of time in contact with health professionals and psychiatric care could also increase the accuracy of the model.</p>
+      </section>
+    </div>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/TNames/DRUG_TREATMENT_PROJECT">Predicting Drug Treatment Program Adherence</a> is maintained by <a href="https://github.com/TNames">TNames</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Predicting Drug Treatment Program Adherence maintained by <a href="https://github.com/TNames">TNames</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
+    </div>
 
-    </section>
+    
 
-  
   </body>
 </html>
